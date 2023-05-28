@@ -23,7 +23,7 @@ def print_pascal_triangle(num_rows: int, triangle, optimized = False): #OUTER FU
     return delta_t_opti
 
 #STANDARD VERSION CONSISTS OF 3x CHAINED FUNCTIONS:
-def generate_pascal_triangle(num_rows: int) -> list[list[int]]: #Returns 2D triangle list -> Chains 3x funcs!
+def generate_pascal_triangle(num_rows: int): #Returns 2D triangle list -> Chains 3x funcs!
     ###num_rows data check - start!
     if not isinstance(num_rows, int):
         raise TypeError("The input value of 'num_rows' should be 'int'")
@@ -33,7 +33,7 @@ def generate_pascal_triangle(num_rows: int) -> list[list[int]]: #Returns 2D tria
         raise ValueError("The input value of 'num_rows' should be greater than or equal to 0")
     ###num_rows data check - ends!
 
-    triangle: list[list[int]] = [] #Creates empty triangle list = [].
+    triangle = [] #Creates empty triangle list = [].
     for current_row_idx in range(num_rows): #row_idx starts at 0 to num_rows - 1
         current_row = populate_current_row(triangle, current_row_idx) #Assigns complete row list to current_row
         triangle.append(current_row) #Embeds current_row list as 2nd level list inside outer triangle list. --> 2D list array
